@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080b0a" />
+  <title>gh23-kei — Creative Developer</title>
+  <meta name="description" content="Personal portfolio of gh23-kei." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    : :root {
+      --ink:#080b0a; --panel:#101412; --line:#26302b; --mint:#a8ffd1;
+      --text:#edf4ef; --muted:#909b95; --lime:#d9ff69;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:"Manrope",sans-serif;color:var(--text);background:var(--ink);overflow-x:hidden}
+    body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.15;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:32px 32px}
+    a{color:inherit;text-decoration:none}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}
+    nav{height:82px;display:flex;align-items:center;border-bottom:1px solid var(--line)}
+    nav .wrap{display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:-.02em}
+    .brand-mark{width:34px;height:34px;border-radius:50%;background:var(--mint);color:var(--ink);display:grid;place-items:center;font-family:"DM Mono",monospace;font-size:12px;box-shadow:0 0 30px rgba(168,255,209,.18)}
+    .nav-links{display:flex;align-items:center;gap:32px;color:var(--muted);font-size:14px}.nav-links a:hover{color:var(--mint)}
+    .status{display:flex;align-items:center;gap:8px;color:var(--text)!important}.status i{width:7px;height:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+    .hero{min-height:650px;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:60px;padding:70px 0}
+    .eyebrow{font-family:"DM Mono",monospace;color:var(--mint);font-size:12px;text-transform:uppercase;letter-spacing:.16em;margin-bottom:22px}
+    h1{font-size:clamp(58px,8vw,112px);line-height:.86;letter-spacing:-.075em;margin:0 0 34px;max-width:760px}
+    h1 span{color:var(--mint)}
+    .intro{max-width:520px;color:var(--muted);font-size:18px;line-height:1.75;margin-bottom:36px}
+    .actions{display:flex;gap:12px}.btn{height:50px;padding:0 20px;border:1px solid var(--line);display:inline-flex;align-items:center;gap:10px;border-radius:999px;font-size:14px;font-weight:700;transition:.25s}
+    .btn.primary{background:var(--mint);color:var(--ink);border-color:var(--mint)}.btn:hover{transform:translateY(-3px)}
+    .portrait-wrap{position:relative}.portrait{aspect-ratio:.82;border:1px solid var(--line);border-radius:180px 180px 24px 24px;background:radial-gradient(circle at 50% 25%,#d8ffe9 0 9%,var(--mint) 9.5% 28%,transparent 28.5%),linear-gradient(145deg,#1a231f,#0c100e);overflow:hidden;position:relative}
+    .portrait::before{content:"";position:absolute;width:54%;height:38%;left:23%;bottom:-6%;border-radius:50% 50% 20% 20%;background:#111713;border:1px solid #35433b}
+    .portrait::after{content:"GK";position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);font-size:clamp(80px,12vw,150px);font-weight:800;letter-spacing:-.12em;color:rgba(8,11,10,.8)}
+    .orbit-tag{position:absolute;right:-18px;top:48%;width:94px;height:94px;border-radius:50%;background:var(--lime);color:var(--ink);display:grid;place-items:center;text-align:center;font-family:"DM Mono",monospace;font-size:10px;font-weight:500;transform:rotate(8deg);box-shadow:0 15px 50px rgba(217,255,105,.12)}
+    .ticker{border-block:1px solid var(--line);height:56px;display:flex;align-items:center;overflow:hidden;color:var(--muted);font-family:"DM Mono",monospace;font-size:12px;text-transform:uppercase}.ticker-inner{display:flex;gap:40px;white-space:nowrap}.ticker b{color:var(--mint)}
+    section{padding:110px 0}.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:42px}.kicker{font-family:"DM Mono",monospace;font-size:12px;color:var(--mint);text-transform:uppercase;letter-spacing:.12em}h2{font-size:clamp(38px,6vw,68px);letter-spacing:-.055em;line-height:1;margin:12px 0 0}
+    .projects{display:grid;grid-template-columns:1fr 1fr;gap:18px}.project{min-height:330px;border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--panel);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;transition:.35s}.project:hover{border-color:#526158;transform:translateY(-5px)}
+    .project:first-child{background:linear-gradient(145deg,#17201c,#0c100e)}.project:nth-child(2){background:linear-gradient(145deg,#171b16,#0c100e)}
+    .project-art{position:absolute;inset:20px 20px 115px;border:1px solid rgba(168,255,209,.12);border-radius:10px;background:linear-gradient(135deg,rgba(168,255,209,.12),transparent 55%)}
+    .project-art::before{content:"";position:absolute;width:46%;height:80%;right:8%;bottom:-15%;border-radius:50% 50% 8px 8px;border:1px solid rgba(168,255,209,.35);transform:rotate(-8deg)}
+    .project-meta{display:flex;justify-content:space-between;align-items:center}.project h3{font-size:26px;margin:0 0 8px}.project p{color:var(--muted);margin:0;font-size:14px}.arrow{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;color:var(--mint)}
+    .stack{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:18px;overflow:hidden}.stack div{padding:28px;border-right:1px solid var(--line)}.stack div:last-child{border:0}.stack span{display:block;color:var(--muted);font-size:12px;margin-bottom:12px;font-family:"DM Mono",monospace}.stack b{font-size:18px}
+    footer{border-top:1px solid var(--line);padding:34px 0 44px}.footer-inner{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.footer-inner a{color:var(--mint)}
+    .reveal{animation:reveal .8s cubic-bezier(.2,.7,.2,1) both}@keyframes reveal{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+    @media(max-width:800px){.wrap{width:min(100% - 32px,1180px)}.nav-links a:not(.status){display:none}.hero{grid-template-columns:1fr;padding:55px 0}.portrait-wrap{max-width:360px;margin:20px auto 0}.hero{min-height:auto}.projects{grid-template-columns:1fr}.stack{grid-template-columns:1fr 1fr}.stack div:nth-child(2){border-right:0}.stack div:nth-child(-n+2){border-bottom:1px solid var(--line)}section{padding:75px 0}.footer-inner{gap:20px;flex-direction:column}.orbit-tag{right:-8px}}
+  </style>
+</head>
+<body>
+  <nav><div class="wrap">
+    <a class="brand" href="#"><span class="brand-mark">GK</span><span>gh23-kei</span></a>
+    <div class="nav-links"><a href="#work">Work</a><a href="#stack">Stack</a><a class="status" href="https://github.com/gh23-kei" target="_blank"><i></i>GitHub</a></div>
+  </div></nav>
+
+  <main><div class="wrap">
+    <div class="hero reveal">
+      <div>
+        <div class="eyebrow">Student · Developer · Viet Nam</div>
+        <h1>Make.<br><span>Learn.</span><br>Repeat.</h1>
+        <p class="intro">A small digital playground for experiments, ideas and things that become real through code.</p>
+        <div class="actions"><a class="btn primary" href="#work">Explore work <span>↗</span></a><a class="btn" href="https://github.com/gh23-kei" target="_blank">GitHub</a></div>
+      </div>
+      <div class="portrait-wrap"><div class="portrait"></div><div class="orbit-tag">AVAILABLE<br>FOR IDEAS</div></div>
+    </div>
+  </div>
+
+  <div class="ticker"><div class="ticker-inner"><b>HTML</b><span>●</span><span>CREATIVE CODING</span><span>●</span><b>CSS</b><span>●</span><span>LEARNING EVERY DAY</span><span>●</span><b>JAVASCRIPT</b><span>●</span><span>BUILDING IN PUBLIC</span></div></div>
+
+  <section id="work"><div class="wrap"><div class="section-head"><div><div class="kicker">Selected work / 01</div><h2>Recent projects</h2></div></div>
+    <div class="projects">
+      <a class="project" href="https://github.com/gh23-kei" target="_blank"><div class="project-art"></div><div class="project-meta"><div><h3>Digital Playground</h3><p>Web experiment · 2026</p></div><div class="arrow">↗</div></div></a>
+      <a class="project" href="https://github.com/gh23-kei" target="_blank"><div class="project-art"></div><div class="project-meta"><div><h3>Learning Lab</h3><p>Code experiments · 2026</p></div><div class="arrow">↗</div></div></a>
+    </div>
+  </div></section>
+
+  <section id="stack"><div class="wrap"><div class="section-head"><div><div class="kicker">Tools / 02</div><h2>My stack</h2></div></div>
+    <div class="stack"><div><span>01</span><b>HTML</b></div><div><span>02</span><b>CSS</b></div><div><span>03</span><b>JavaScript</b></div><div><span>04</span><b>Git & GitHub</b></div></div>
+  </div></section></main>
+
+  <footer><div class="wrap footer-inner"><span>© 2026 gh23-kei</span><a href="https://github.com/gh23-kei" target="_blank">github.com/gh23-kei ↗</a></div></footer>
+</body>
+</html>
